@@ -1,0 +1,39 @@
+<main class="blog-detail">
+  <button class="back-button" (click)="goBack()">
+    <fa-icon [icon]="faArrowLeft"></fa-icon>
+    <span>Back to blog</span>
+  </button>
+
+  <div class="tags">
+    <span class="tag" *ngFor="let tag of post?.tags">{{ tag }}</span>
+  </div>
+
+  <h1 class="title">{{ post?.title }}</h1>
+  <div class="meta">{{ post?.author }} • {{ post?.date }}</div>
+
+  <div class="cover">
+    <img [src]="post?.image" [alt]="post?.title" />
+  </div>
+
+  <div class="content">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla
+      rutrum lorem, sed dictum purus maximus quis...
+    </p>
+    <h2>The Challenge</h2>
+    <p>
+      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+      doloremque laudantium.
+    </p>
+    <blockquote>
+      "Design is not just what it looks like. Design is how it works." — Steve
+      Jobs
+    </blockquote>
+    <h2>The Solution</h2>
+    <ul>
+      <li>User research and interviews</li>
+      <li>Wireframing and prototyping</li>
+      <li>Iteration and testing</li>
+    </ul>
+  </div>
+</main>

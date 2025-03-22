@@ -1,0 +1,22 @@
+<header class="header" [class.scrolled]="isScrolled">
+  <div class="header-gradient"></div>
+  <div class="container">
+    <div class="logo">
+      <fa-icon [icon]="faLogo"></fa-icon>
+      <span>Untitled UI</span>
+    </div>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">Products <fa-icon [icon]="faChevronDown" /></a>
+      <a href="#">Solutions <fa-icon [icon]="faChevronDown" /></a>
+      <a href="#">Pricing</a>
+      <a href="#">Resources <fa-icon [icon]="faChevronDown" /></a>
+      <a href="#">Company <fa-icon [icon]="faChevronDown" /></a>
+      <a href="#">Careers</a>
+    </nav>
+    <div class="actions">
+      <button class="get-started">Get started</button>
+      <fa-icon [icon]="faUser" class="user-icon"></fa-icon>
+    </div>
+  </div>
+</header>

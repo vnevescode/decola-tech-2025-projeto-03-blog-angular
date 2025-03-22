@@ -1,0 +1,74 @@
+<section class="blog-list">
+  <!-- Seção Recents Blog (3 posts) -->
+  <h2>Recents Blog</h2>
+  <div class="featured-container">
+    <!-- Exemplo: primeiro post grande, os dois seguintes em colunas, etc. -->
+    <div class="big-post" *ngIf="featuredPosts.length > 0">
+      <a [routerLink]="['/blog', featuredPosts[0].id]" class="overlay-link"></a>
+      <img [src]="featuredPosts[0].image" [alt]="featuredPosts[0].title" />
+      <div class="info">
+        <span class="meta">
+          {{ featuredPosts[0].author }} • {{ featuredPosts[0].date }}
+        </span>
+        <h3>{{ featuredPosts[0].title }}</h3>
+        <p>{{ featuredPosts[0].excerpt }}</p>
+        <div class="tags">
+          <span *ngFor="let t of featuredPosts[0].tags" class="tag">{{
+            t
+          }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-posts" *ngIf="featuredPosts.length > 2">
+      <div class="side-post" *ngFor="let post of featuredPosts.slice(1, 3)">
+        <a [routerLink]="['/blog', post.id]" class="overlay-link"></a>
+        <img [src]="post.image" [alt]="post.title" />
+        <div class="info">
+          <span class="meta">{{ post.author }} • {{ post.date }}</span>
+          <h4>{{ post.title }}</h4>
+          <div class="tags">
+            <span *ngFor="let t of post.tags" class="tag">{{ t }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- All blog posts (com paginação) -->
+<section class="all-posts">
+  <h2>All blog posts</h2>
+
+  <div class="grid">
+    <div class="card" *ngFor="let post of paginatedPosts">
+      <a [routerLink]="['/blog', post.id]" class="overlay"></a>
+      <img [src]="post.image" alt="Post image" />
+      <div class="content">
+        <span class="meta">{{ post.author }} • {{ post.date }}</span>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.excerpt }}</p>
+        <div class="tags">
+          <span *ngFor="let tag of post.tags" class="tag">{{ tag }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Paginação -->
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">
+      Previous
+    </button>
+    <button
+      *ngFor="let page of [].constructor(totalPages); index as i"
+      [class.active]="i + 1 === currentPage"
+      (click)="goToPage(i + 1)"
+    >
+      {{ i + 1 }}
+    </button>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+      Next
+    </button>
+  </div>
+</section>
