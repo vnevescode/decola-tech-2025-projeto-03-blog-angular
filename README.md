@@ -33,6 +33,9 @@ O layout é baseado no [Untitled UI – Blog Home Page](https://dribbble.com/sho
 ## Fotos do meu Projeto
 
 ![image](https://github.com/user-attachments/assets/58bedac4-0a06-464b-a8ae-ef2aadf99686)
+![image](https://github.com/user-attachments/assets/d97a9cf5-1f29-4dde-8181-7798a4d0e5ae)
+
+
 ![image](https://github.com/user-attachments/assets/c52dc948-42fb-4ba3-a081-a664311e79aa)
 ![image](https://github.com/user-attachments/assets/7d22f0be-7680-4fc7-81ad-cb7aee58db8e)
 
